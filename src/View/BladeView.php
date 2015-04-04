@@ -35,10 +35,9 @@ class BladeView extends View {
 	protected $_loadedHelpers = [];
 
 	public function __construct(Request $request = null, Response $response = null, EventManager $eventManager = null, array $viewOptions = []) {
-
 		parent::__construct($request, $response, $eventManager, $viewOptions);
 
-		$this->_serviceProvider = new ServiceProvider(Configure::read('App.paths.templates'), CACHE.'bladeView');
+		$this->_serviceProvider = new ServiceProvider(Configure::read('App.paths.templates'), CACHE . 'bladeView');
 
 		$this->loadBlade();
 
